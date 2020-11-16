@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { toast } from 'react-toastify';
+import './login.css';
 
 const Login = ({ setAuth }) => {
 
@@ -42,12 +43,36 @@ const Login = ({ setAuth }) => {
 
     return (
         <Fragment>
-            <h1 className="text-center my-5">Login</h1>
-            <form onSubmit={onSubmitForm}>
-                <input type="email" name="email" placeholder="email" className="form-control my-3" value={email} onChange={e => onchange(e)} />
-                <input type="password" name="password" placeholder="password" className="form-control my-3" value={password} onChange={e => onchange(e)} />
-                <button className="btn btn-success btn-block">Submit</button>
-            </form>
+            <div class="test">
+		        <div class="d-flex justify-content-center">
+			        <div class="user_card">
+				        <div class="d-flex justify-content-center">
+					        <div class="brand_logo_container">
+						        <img src="https://www.heemskerkflowers.com/Themes/Default/images/header-logo-small.svg?v=180830123710" class="brand_logo" alt="Logo" />
+					        </div>
+				        </div>
+				        <div class="d-flex justify-content-center form_container">
+					        <form onSubmit={onSubmitForm}>
+						        <div class="input-group mb-3">
+							        <div class="input-group-append">
+								        <span class="input-group-text"><i class="fas fa-user"></i></span>
+							        </div>
+                                    <input type="email" name="email" placeholder="Gebruikersnaam" class="form-control input_user" value={email} onChange={e => onchange(e)} />
+						        </div>
+						        <div class="input-group mb-2">
+							        <div class="input-group-append">
+								        <span class="input-group-text"><i class="fas fa-key"></i></span>
+							        </div>
+                                    <input type="password" name="password" placeholder="Wachtwoord" class="form-control input_pass" value={password} onChange={e => onchange(e)} />
+						        </div>
+							    <div class="d-flex justify-content-center mt-3 login_container">
+				 	                <button class="btn btn-success login_btn">Login</button>
+				                </div>
+					        </form>
+				        </div>		
+			        </div>
+		        </div>
+	        </div>            
         </Fragment>
     );
 };
